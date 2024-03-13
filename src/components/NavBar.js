@@ -6,19 +6,19 @@ function NavBar() {
 
   return (
     <header className={`header${isHeaderFixed ? ' fixed' : ''}`}>
-      <Link to="/" className="header-logo">
+      <Link to="/portfolio" className="header-logo">
         <p className="header-logo-text">lii</p>
       </Link>
 
       <nav className={`navigation${isHeaderFixed ? ' fixed-nav' : ''}`}>
         <ul>
           <li>
-            <Link to="/about" className="nav-link">
+            <Link to="/portfolio/about" className="nav-link">
               About
             </Link>
           </li>
           <li>
-            <Link to="/projects" className="nav-link">
+            <Link to="/portfolio/projects" className="nav-link">
               Projects
             </Link>
           </li>

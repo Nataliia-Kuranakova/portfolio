@@ -13,13 +13,13 @@ const Pages = () => {
   return (
     <div className={modeAnimatedBg}>
       <Routes>
-        <Route path="/" element={<Introduction />} />
-        <Route path="projects" element={<ProjectsList />} />
-        <Route path="about" element={<About />} />
+        <Route path="/portfolio" element={<Introduction />} />
+        <Route path="/portfolio/projects" element={<ProjectsList />} />
+        <Route path="/portfolio/about" element={<About />} />
         {projects.map((projectContent) => (
           <Route
             key={projectContent.project_path}
-            path={`projects/${projectContent.project_path}`}
+            path={`/portfolio/projects/${projectContent.project_path}`}
             element={<Project projectContent={projectContent} />}
           />
         ))}
