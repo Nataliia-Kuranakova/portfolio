@@ -1,0 +1,36 @@
+.about {
+  @include flex-sp-between;
+  width: 100%; 
+  flex-wrap: wrap;
+  margin: 60px  0 0 0;
+  @include fadeIn();
+
+  &-title {
+    width: 40%;
+    margin: 0 0 20px 0;
+    text-transform: $subtitles-uppercase;
+    font-size: $subtitles-font-size;
+    font-size: calc(3vh + 2vmin);
+    font-weight: $subtitles-font-weight;
+
+    &--dark {
+      @include bothThenmeClippedText($bg-size: 300px, $dark-theme: false);
+    }
+
+    &--light {
+      @include bothThenmeClippedText($bg-size: 300px, $dark-theme: true);
+    }
+  }
+
+  &-descr {
+    width: 60%;
+    text-align: center;
+    text-align: justify;
+    line-height: 50px;
+    font-size: calc(1vh + 2vmin);
+
+    & p {
+      margin: 0 0 15px 0;
+    }
+  }
+}

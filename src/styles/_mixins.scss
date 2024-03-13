@@ -1,0 +1,65 @@
+@mixin bothThenmeClippedText ($bg-size: 120%, $txt-stroke: 1px, $dark-theme: true) {
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    @if $dark-theme {
+      background-image: 
+      url("../icons/pattern_dark.svg");
+    } @else {
+      background-image: 
+      url("../icons/pattern_light.svg");
+    }
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+    background-size: $bg-size auto;
+    -webkit-text-stroke: $txt-stroke;
+    @if $dark-theme {
+      -webkit-text-stroke-color: $main_text_color;
+    } @else {
+      -webkit-text-stroke-color: $light_mode_color;
+    }
+  }
+}
+
+@mixin linkBtnBgColor($bg-size: 600%, $shadow-size: 0px 3px 4px 0px, $animation-duration: 0.5s, $dark-theme: true) {
+  @if $dark-theme {
+    background-image: 
+    url("../icons/bg-btn-light.svg");
+    box-shadow: $shadow-size rgba(255, 238, 235,0.3); 
+    border: 1px solid rgba(255, 238, 235,0.1); 
+  } @else {
+    background-image: 
+    url("../icons/bg-btn-dark.svg");
+    box-shadow: $shadow-size rgba(64,64,64,0.6);
+    border: 1px solid rgba(64, 64, 64, 0.1);
+  }
+  @include zoomBgIn($animation-duration);
+  background-size: $bg-size auto;
+}
+
+@mixin clipped-text-title-introdaxtion($margin: 25px) {
+  font-family: $main_font;
+  text-transform: $subtitles-uppercase;
+  margin-left: $margin;
+}
+
+@mixin flex-sp-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin mode($h: 24px, $w: 24px, $bg-color: transparent) {
+  height: $h;
+  width: $w;
+  background-color: $bg-color;
+  border-radius: 50%;
+}
+
+@mixin mode-spot-size( $h: 24px, $w: 24px) {
+  height: $h;
+  width: $w;
+}
+
+@mixin mode-padding($pad: 0, $right: 0 ) {
+  padding: $pad;
+  right: $right;
+}

@@ -1,0 +1,10 @@
+.project-subtitles {
+  margin: 0 0 6px 0;
+  margin-top: calc(1vw + 1vh + 1vmin);;
+  line-height: normal;
+  text-transform: uppercase;
+
+  &--tools {
+    margin:  6px 0 0 0;
+  }
+}

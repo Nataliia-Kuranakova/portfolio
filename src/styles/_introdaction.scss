@@ -1,0 +1,76 @@
+.introdaction-container {
+  @include flex-sp-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 50vh;
+  position: relative;
+  @include fadeIn();
+}
+
+.clipped-title {
+  display: inline-block;
+}
+
+.title {
+  font-family: $title_font;
+  text-align: center;
+  margin: 0;
+  font-size: calc(3.3vw + 3vh + 2vmin);
+  font-weight: 800;
+  align-self: flex-start;
+  @include slideInFromLeft('slideInTitle', -100%, 1.5s);
+}
+
+.dark-text-span {
+  @include bothThenmeClippedText($txt-stroke: 1.5px $main_text_color, $dark-theme: true);
+  @include clipped-text-title-introdaxtion();
+}
+
+.light-text-span {
+  @include bothThenmeClippedText($txt-stroke: 1.5px $main_text_color, $dark-theme: false);
+  @include clipped-text-title-introdaxtion();
+}
+
+.subtitle {
+  align-self: flex-end;
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+  @include slideInFromRight($animation-duration: 1.5s);
+}
+
+.header-logo-text {
+  font-family: $title_font;
+  font-size: calc(3vh + 3vmin);
+  letter-spacing: -3px;
+  cursor: pointer;
+  margin:0;
+}
+
+.scrolling-skills {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+}
+
+.skills {
+  font-family: $subtitle-font;
+  text-transform: $subtitles-uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+  @include infiniteRowScroll();
+  transition: animation;
+
+  & span {
+    margin-right: 20px;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,133 @@
+@media screen and (max-width: 1440px) {
+
+  .project-name-numeral {
+    top: 10%;
+  }
+
+  .project-title-wrapper {
+    top: 18%;
+  }
+
+  .project-button-container {
+    margin: 15% 0 7% 0;
+  }
+}
+
+@media  screen and (max-width: 1024px) { 
+
+  body {
+    background: radial-gradient(ellipse at top, rgb(230, 101, 101, 0.7), transparent),
+    radial-gradient(ellipse at bottom, rgba(77, 159, 12,0.2), transparent);
+    background-size: 150% 400%;
+    @include gradient();
+  }
+  
+  .liner-gradient {
+    background: linear-gradient(35deg, rgba(35, 166, 213,0.3),  rgba(238, 119, 82,0.3));
+    background-size: 300% 300%;
+    @include gradient($animation-duration: 40s);
+  }
+
+  .introdaction-container {
+    align-content: center;
+  }
+
+  .light-text-span {
+    @include clipped-text-title-introdaxtion($margin: 0);
+  }
+
+  .dark-text-span {
+    @include clipped-text-title-introdaxtion($margin: 0);
+  }
+
+  .subtitle {
+    justify-content: center;
+  }
+
+  .projects-list {
+    width: 100%;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .about-descr {
+    width: 100%;
+  }
+
+  .project-wrapper {
+    width: 100%;
+  }
+
+  .project-name {
+    width: 100%;
+  }
+  .project-name-numeral {
+    position: fixed;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .number {
+    font-size: calc(70vw + 4vh + 2vmin);
+    background-clip: unset;
+    background-size: 0;
+    -webkit-text-stroke: 0;
+    &-light {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    &-dark {
+      color: rgba(64, 64, 64, 0.5);
+    }
+  }
+
+  .project-title-wrapper {
+    max-width: 100%;
+   
+  }
+
+  .project-title-wrapper {
+    position: static;
+  }
+
+  .project-button-container {
+    justify-content: center;
+  }
+}
+
+@media  screen and (max-width: 768px) { 
+
+  .about-descr {
+    line-height: 30px;
+  }
+}
+
+@media  screen and (max-width: 425px) {
+  .project-descr {
+    width: 100%;
+  }
+
+  .number {
+    display: none;
+  }
+
+  .light-text-span {
+    margin: 0 12px
+  }
+
+  .item-view_case {
+    display: none;
+  }
+
+  .project-button-link  {
+    padding: 4px 16px;
+  }
+
+  .about-title {
+    width: 100%;
+  }
+}

@@ -1,0 +1,109 @@
+@mixin fadeIn($animation-duration: 1s, $fill-mode: ease-in-out) {
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  animation: fadeIn $animation-duration $fill-mode;
+}
+
+@mixin fadeOut($animation-duration: 1s, $fill-mode: ease-in-out) {
+  @keyframes fadeOut {
+    100% { opacity: 1; }
+    0% { opacity: 0; }
+  }
+  animation: fadeOut 1s ease-in-out;
+}
+
+@mixin gradient($animation-duration: 20s, $fill-mode: ease, $iteration: infinite) {
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  animation: gradient $animation-duration $fill-mode $iteration;
+}
+
+@mixin infiniteRowScroll($animation-duration: 150s, $fill-mode: linear, $iteration: infinite) {
+  @keyframes infiniteRowScroll {
+    from {transform: translateX(0)}
+    to {transform: translateX(-50%)}
+  }
+  animation: infiniteRowScroll $animation-duration $fill-mode $iteration ;
+}
+
+@mixin slideInFromRight($animation-duration: 1s) {
+  @keyframes slideInFromRight {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  animation: slideInFromRight $animation-duration;
+}
+
+@mixin slideInFromLeft($animationName, $translateX: -100%, $duration: 1s, $fill-mode: none) {
+  @keyframes #{$animationName} {
+    from {
+      transform: translateX($translateX);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  animation: #{$animationName} $duration $fill-mode;
+}
+
+@mixin slideInFromTop {
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+  animation: slideInFromTop 1s;
+}
+
+@mixin dropModeSpot {
+  @keyframes dropModeSpot {
+    from {
+      right: 6px;
+      @include mode-spot-size($h: 0, $w: 0);
+      transform: translateX(0%);
+    }
+  }
+  animation: dropModeSpot 0.4s leaner 0.7s;
+}
+
+@mixin spinBorderOnHover($animation-duration: 10s, $fill-mode: linear, $iteration: infinite) {
+  @keyframes spinBorderOnHover {
+    0% {
+      transform: translate(-50%, -50%) scale(1.02) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.02) rotate(360deg);
+    }
+  }
+  animation: spinBorderOnHover 10s linear infinite;
+}
+
+@mixin zoomBgIn($animation-duration: 0.5s) {
+  @keyframes zoomBgIn {
+    from {
+      background-size: 0%;
+    }
+    to {
+      background-size: 600%;
+    }
+  }
+  animation: zoomBgIn $animation-duration;
+}
