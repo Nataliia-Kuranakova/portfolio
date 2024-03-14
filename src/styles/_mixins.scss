@@ -20,17 +20,17 @@
   }
 }
 
-@mixin linkBtnBgColor($bg-size: 600%, $shadow-size: 0px 3px 4px 0px, $animation-duration: 0.5s, $dark-theme: true) {
+@mixin linkBtnBgColor($bg-size: 600%, $shadow-size: 0px 3px 3px 0px, $animation-duration: 0.5s, $dark-theme: true) {
   @if $dark-theme {
     background-image: 
     url("../icons/bg-btn-light.svg");
     box-shadow: $shadow-size rgba(255, 238, 235,0.3); 
-    border: 1px solid rgba(255, 238, 235,0.1); 
+    border: 1px solid rgba(255, 238, 235,0.2); 
   } @else {
     background-image: 
     url("../icons/bg-btn-dark.svg");
     box-shadow: $shadow-size rgba(64,64,64,0.6);
-    border: 1px solid rgba(64, 64, 64, 0.1);
+    border: 1px solid rgba(64, 64, 64, 0.15);
   }
   @include zoomBgIn($animation-duration);
   background-size: $bg-size auto;

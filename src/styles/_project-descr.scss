@@ -45,13 +45,12 @@
 
   &-goals {
     display: flex;
-    gap: 20px;
+    gap: calc(0.7vw + 0.7vh + 1vmin);
     flex-direction: column;
     list-style: none;
     padding: 0 ;
-    margin-bottom: calc(2vw + 2vh + 2vmin);;
+    margin-bottom: calc(2vw + 2vh + 2vmin);
    
-
     &-item {
       display: flex;
       gap: calc(0.7vw + 0.7vh + 0.7vmin);
@@ -61,7 +60,7 @@
       & p {
         display: flex;
         justify-content: center;
-        padding: calc(0.7vw + 0.7vh + 0.7vmin);
+        padding: calc(0.6vw + 0.6vh + 0.3vmin);
         width: 50%;
         margin: 0;
         text-align: center;
@@ -85,6 +84,10 @@
       text-transform: uppercase;
       font-weight: 500;
     }
+  }
+
+  &-descr {
+    margin: 0;
   }
 
   &-experience-list {
@@ -145,7 +148,8 @@
 }
 
 .project-button-container {
-  margin: 10% 0 0 0;
+  margin-top: calc(1vw + 1vh + 4vmin);
+  margin-bottom: calc(2.5vw + 6vh + 4vmin);
   @include flex-sp-between;
   gap: 10%; 
 }
@@ -182,18 +186,18 @@
   }
 
   &--light {
-    @include linkBtnBgColor($bg-size: 5%, $animation-duration: 0s, $shadow-size: 0px 3px 2px 0px, $dark-theme: true);
+    @include linkBtnBgColor($bg-size: 5%, $animation-duration: 0s, $shadow-size: 0px 3px 1px 0px, $dark-theme: true);
   }
   &--dark {
     @include linkBtnBgColor($bg-size: 5%, $animation-duration: 0s, $dark-theme: false);
   }
 
   &--light:hover {
-    @include linkBtnBgColor($shadow-size: 0 -2px 3px 0px, $dark-theme: true);
+    @include linkBtnBgColor($shadow-size: 0 -2px 1px 0px, $dark-theme: true);
   }
 
   &--dark:hover {
-    @include linkBtnBgColor( $shadow-size: 0 -2px 3px 0px, $dark-theme: false);
+    @include linkBtnBgColor( $shadow-size: 0 -2px 2px 0px, $dark-theme: false);
   }
 }
 
@@ -206,28 +210,21 @@
   margin: 0 14px 10px 0;
 
   &--light {
-    @include linkBtnBgColor($bg-size: 3%, $animation-duration: 0s, $shadow-size: 0px 3px 2px 0px, $dark-theme: true);
+    @include linkBtnBgColor($bg-size: 3%, $animation-duration: 0s, $shadow-size: 0px 3px 1px 0px, $dark-theme: true);
   }
   &--dark {
     @include linkBtnBgColor($bg-size: 3%, $animation-duration: 0s, $dark-theme: false);
   }
 
   &--light:hover {
-    @include linkBtnBgColor($bg-size: 300%, $shadow-size: 0 -2px 3px 0px, $dark-theme: true);
+    @include linkBtnBgColor($bg-size: 300%, $shadow-size: 0 -2px 1px 0px, $dark-theme: true);
   }
 
   &--dark:hover {
-    @include linkBtnBgColor($bg-size: 300%, $shadow-size: 0 -2px 3px 0px, $dark-theme: false);
+    @include linkBtnBgColor($bg-size: 300%, $shadow-size: 0 -2px 2px 0px, $dark-theme: false);
   }
 }
 
 .space {
   margin: 10px 0 20px 0;
 }
-
-.project-descr {
-  font-size: calc(1vh + 2vmin);
-  margin: 0;
-}
-
-

@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0 0 0;
-  backdrop-filter: blur(20px);
+  line-height: calc(2vh + 2vmin);
+  padding: 30px 0 0 0;
+  padding-top: calc(2vh + 2vmin);
   
   & a {
     text-decoration: none;
@@ -13,6 +14,14 @@
       @include slideInFromLeft('slideInLogo', -300%, 1.1s);
     }
   }
+}
+
+.header-logo-text {
+  font-family: $title_font;
+  font-size: calc(3vh + 3vmin);
+  letter-spacing: -3px;
+  cursor: pointer;
+  margin:0;
 }
 
 .navigation  {
@@ -45,9 +54,10 @@
   position: fixed;
   z-index: 15;
   left: 0;
-  padding: 0 7%;
+  padding: 2% 7%;
   width: 100%;
   box-sizing: border-box;
+  backdrop-filter: blur(20px);
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
   & a > p {
@@ -75,7 +85,6 @@
   display: flex;
   justify-content: flex-end;
   height: 50px;
-  margin: 9% 0 0 0;
 
   &-mode-wrapper {
     position: fixed;

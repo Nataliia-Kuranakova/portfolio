@@ -9,7 +9,6 @@
     width: 40%;
     margin: 0 0 20px 0;
     text-transform: $subtitles-uppercase;
-    font-size: $subtitles-font-size;
     font-size: calc(3vh + 2vmin);
     font-weight: $subtitles-font-weight;
 
@@ -26,11 +25,12 @@
     width: 60%;
     text-align: center;
     text-align: justify;
-    line-height: 50px;
-    font-size: calc(1vh + 2vmin);
+    line-height: 43px;
+    font-size: calc(1vh + 1vh + 1vmin);
 
     & p {
-      margin: 0 0 15px 0;
+      margin-top: 0;
+      margin-bottom: calc(1vh + 1vmin);
     }
   }
 }

@@ -39,14 +39,6 @@
   @include slideInFromRight($animation-duration: 1.5s);
 }
 
-.header-logo-text {
-  font-family: $title_font;
-  font-size: calc(3vh + 3vmin);
-  letter-spacing: -3px;
-  cursor: pointer;
-  margin:0;
-}
-
 .scrolling-skills {
   position: absolute;
   left: 0;
@@ -60,6 +52,7 @@
   font-family: $subtitle-font;
   text-transform: $subtitles-uppercase;
   font-size: 20px;
+  font-size: calc(0.7vh + 0.7vh + 0.7vmin);
   letter-spacing: 2px;
   @include infiniteRowScroll();
   transition: animation;

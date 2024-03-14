@@ -7,36 +7,33 @@
   .project-title-wrapper {
     top: 18%;
   }
-
-  .project-button-container {
-    margin: 15% 0 7% 0;
-  }
 }
 
 @media  screen and (max-width: 1024px) { 
+  .fixed {
+    padding: 4% 7%;
+  }
 
-  body {
-    background: radial-gradient(ellipse at top, rgb(230, 101, 101, 0.7), transparent),
-    radial-gradient(ellipse at bottom, rgba(77, 159, 12,0.2), transparent);
-    background-size: 150% 400%;
-    @include gradient();
+  .skills {
+    font-size: calc(0.5vh + 0.5vh + 0.5vmin);
+  }
+
+  .title {
+    font-weight: 900;
   }
   
-  .liner-gradient {
-    background: linear-gradient(35deg, rgba(35, 166, 213,0.3),  rgba(238, 119, 82,0.3));
-    background-size: 300% 300%;
-    @include gradient($animation-duration: 40s);
-  }
-
   .introdaction-container {
     align-content: center;
+    margin-bottom: calc(2vh + 2vw + 2vmin);
   }
 
   .light-text-span {
+    @include bothThenmeClippedText($main_text_color, $dark-theme: false); 
     @include clipped-text-title-introdaxtion($margin: 0);
   }
 
   .dark-text-span {
+    @include bothThenmeClippedText($main_text_color, $dark-theme: true);
     @include clipped-text-title-introdaxtion($margin: 0);
   }
 
@@ -54,6 +51,7 @@
 
   .about-descr {
     width: 100%;
+    font-size: calc(1vh + 1vw + 0.7vmin);
   }
 
   .project-wrapper {
@@ -68,7 +66,6 @@
     z-index: -1;
     justify-content: center;
     align-items: center;
-
   }
 
   .number {
@@ -102,13 +99,71 @@
 @media  screen and (max-width: 768px) { 
 
   .about-descr {
-    line-height: 30px;
+    line-height: 35px;
+  }
+
+  .project-goals-item p {
+    font-size: calc(1vw + 0.7vh + 0.7vmin);
+    border-radius: 10px;
   }
 }
 
+
 @media  screen and (max-width: 425px) {
-  .project-descr {
-    width: 100%;
+
+  .project-goals-item p {
+    font-size: calc(1vw + 0.7vh + 0.7vmin);
+    border-radius: 7px;
+  }
+
+  .fixed {
+    padding: 5% 7%;
+  }
+
+  .projects-list-item {
+    font-size: calc(2vw + 2.5vh + 1vmin);
+  }
+
+  .about {
+    margin:  0;
+    padding: 50px 0 0 0;
+
+    &-title {
+      margin: 0 0 5px 0;
+    }
+
+    &-descr {
+      line-height: 20px;
+
+      & > p {
+        margin-top: 0;
+        margin-bottom: calc(0.7vh + 0.7vmin);
+      }
+    }
+  }
+
+  .project-goals-item p {
+    font-size: calc(1vw + 1vh + 0.7vmin);
+    padding: calc(0.6vw + 0.3vh + 0.3vmin);
+    font-weight: 500;
+  }
+
+
+  .header-logo-text {
+    font-size: calc(4vh + 4vmin);
+    letter-spacing: -1px;
+  }
+
+  .navigation ul li{
+    font-size: calc(1vh + 1vh + 1.5vmin);
+  }
+
+  .light-text-span {
+    @include bothThenmeClippedText( $txt-stroke: 0.5px $main_text_color, $dark-theme: false); 
+  }
+
+  .dark-text-span {
+    @include bothThenmeClippedText($txt-stroke: 0.5px $main_text_color, $dark-theme: true);
   }
 
   .number {

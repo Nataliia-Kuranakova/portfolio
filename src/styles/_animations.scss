@@ -29,6 +29,18 @@
   animation: gradient $animation-duration $fill-mode $iteration;
 }
 
+@keyframes gradientSmooth {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @mixin infiniteRowScroll($animation-duration: 150s, $fill-mode: linear, $iteration: infinite) {
   @keyframes infiniteRowScroll {
     from {transform: translateX(0)}

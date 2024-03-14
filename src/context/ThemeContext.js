@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    const handleScroll = () => setIsHeaderFixed(window.scrollY > 100);
+    const handleScroll = () => setIsHeaderFixed(window.scrollY > 10);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
