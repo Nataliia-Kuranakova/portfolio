@@ -16,6 +16,8 @@ body svg {
 }
 
 .liner-gradient-beneath {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   position: fixed;
   background-color: gray;
   z-index: 1;
@@ -24,7 +26,8 @@ body svg {
   bottom:0px;
   left:0px;
   width: 100%;
-  height: calc(100% + 60px);
+  height: calc(100% + 100%);
+  transform: translateZ(0);
   background-image: radial-gradient(
   circle at bottom,
   hsl(0, 72%, 65%),
@@ -35,6 +38,9 @@ body svg {
 }
 
 .liner-gradient {
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
   position: fixed;
   z-index: 2;
   top:0px;
@@ -42,7 +48,7 @@ body svg {
   bottom:0px;
   left:0px;
   width: 100%;
-  height: calc(100% + 60px);
+  height: calc(100% + 100%);
   background: linear-gradient(35deg, rgba(35, 166, 213,0.3),  rgba(238, 119, 82,0.3));
   background-size: 300% 300%;
   @include gradient($animation-duration: 40s);

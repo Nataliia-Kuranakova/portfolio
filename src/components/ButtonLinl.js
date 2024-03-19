@@ -1,7 +1,14 @@
 import { useTheme } from '../context/ThemeContext';
-import sprite from '../sprites/sprite.svg'
+import sprite from '../sprites/sprite.svg';
 
-const ButtonLink = ({ children, href, arialLabel, buttonStyle, icon, margin }) => {
+const ButtonLink = ({
+  icon,
+  href,
+  margin,
+  children,
+  arialLabel,
+  buttonStyle,
+}) => {
   const { theme } = useTheme();
   const btnBgColor = `${buttonStyle}--${theme === 'light' ? 'dark' : 'light'}`;
   return (

@@ -14,20 +14,14 @@ function App() {
   useEffect(() => {
     if (theme === 'light') {
       document.body.style.color = 'rgb(32, 32, 32)';
-      // document.body.style.backgroundColor = 'white';
-      // document.body.style.fontWeight = '400';
     } else {
       document.body.style.color = 'rgb(255, 238, 235)';
-      // document.body.style.backgroundColor = 'black';
-      // document.body.style.fontWeight = '300';
     }
   }, [theme]);
 
   return (
     <div className={` main-container `}>
-      <div
-        className={`liner-gradient-beneath`}
-      ></div>
+      <div className={`liner-gradient-beneath`}></div>
       <div
         className={`liner-gradient ${theme === 'light' ? '' : 'dark-bg'}`}
       ></div>

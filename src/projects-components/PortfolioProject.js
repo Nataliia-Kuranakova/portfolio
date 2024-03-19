@@ -1,6 +1,6 @@
 import { portfolioTools } from '../data/tools';
-import { portfolioExperience } from '../data/experience';
 import { portfolioGoals } from '../data/goals-list';
+import { portfolioExperience } from '../data/experience';
 
 import Chip from '../components/Chip';
 import List from '../components/List';

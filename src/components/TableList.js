@@ -6,7 +6,7 @@ const TableList = ({ list }) => {
     theme !== 'light'
       ? 'project-goals-item-light-bg'
       : 'project-goals-item-dark-bg';
-  console.log('theme', theme);
+
   return (
     <ul className="project-goals">
       <div className="project-goals-title">

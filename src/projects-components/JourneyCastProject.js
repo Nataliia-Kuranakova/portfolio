@@ -1,7 +1,12 @@
+import { journayCastGoals } from '../data/goals-list';
 import { journayCastlioTools } from '../data/tools';
 import { journayCastExperience } from '../data/experience';
-import { journayCastGoals } from '../data/goals-list';
-import { citiesApi, weatherApi, mockUp, weatherIconsGithub } from '../data/links';
+import {
+  mockUp,
+  citiesApi,
+  weatherApi,
+  weatherIconsGithub,
+} from '../data/links';
 
 import Chip from '../components/Chip';
 import List from '../components/List';

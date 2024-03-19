@@ -70,7 +70,7 @@
   flex-direction: row;
   gap: 40px; 
   @include slideInFromRight();
-
+  
   & li {
     font-size: calc(1.4vh + 1.5vmin);
 

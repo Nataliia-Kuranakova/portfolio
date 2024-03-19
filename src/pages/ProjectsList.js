@@ -18,7 +18,9 @@ const ProjectsList = () => {
       <li
         key={item.project}
         className={`projects-list-item projects-list-item${text}`}
-        onClick={() => handleClickPathTo(`/portfolio/projects/${item.project_path}`)}
+        onClick={() =>
+          handleClickPathTo(`/portfolio/projects/${item.project_path}`)
+        }
         onKeyDown={(e) =>
           e.key === 'Enter' &&
           handleClickPathTo(`/projects/${item.project_path}`)
