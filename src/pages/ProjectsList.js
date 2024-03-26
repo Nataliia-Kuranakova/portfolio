@@ -1,11 +1,14 @@
 import { useTheme } from '../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
+import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 import { projects } from '../data/separate-projects';
 
 const ProjectsList = () => {
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const location = true;
+  useDisableScrolling(location);
 
   const handleClickPathTo = (projectPage) => {
     navigate(projectPage);

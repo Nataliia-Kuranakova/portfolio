@@ -1,10 +1,14 @@
 import { useTheme } from '../context/ThemeContext';
 import { githubLink, githubPagesLink } from '../data/links';
+// import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 import ButtoLink from '../components/ButtonLinl';
 
 const Project = ({ projectContent }) => {
   const { theme } = useTheme();
+
+  // const location = false;
+  // useDisableScrolling(location);
 
   const numberColor = `number--${theme === 'light' ? 'light' : 'dark'}`;
   const mobileNumColor = `number-${theme !== 'light' ? 'light' : 'dark'}`;

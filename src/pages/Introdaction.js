@@ -1,8 +1,11 @@
 import { useTheme } from '../context/ThemeContext';
+import useDisableScrolling from '../components/hooks/useDisableScrolling';
 import Row from '../components/Row';
 
 const Introduction = () => {
   const { theme } = useTheme();
+  const location = true;
+  useDisableScrolling(location);
   const colorTitle = theme === 'dark' ? 'light-text-span' : 'dark-text-span';
   return (
     <>

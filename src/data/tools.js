@@ -11,7 +11,7 @@ export const journayCastlioTools = [
   'React',
   'Context',
   'React Router',
-  'Redux Query',
+  'RTK Query',
   'Sass',
   'CSS animations',
 ];

@@ -1,6 +1,9 @@
 import { useTheme } from '../context/ThemeContext';
+import useDisableScrolling from '../components/hooks/useDisableScrolling';
 const About = () => {
   const { theme } = useTheme();
+  const location = true;
+  useDisableScrolling(location);
   return (
     <section className="about">
       <h1

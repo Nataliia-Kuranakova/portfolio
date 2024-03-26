@@ -6,7 +6,7 @@ export const journayCastExperience = [
   'Using RTK Query for data retrieval',
   'Routing for navigation throughout the app',
   'Creating and utilizing custom reusable styles',
-  'Worke with multiple APIs within a single project',
+  'Work with multiple APIs within a single project',
   'Utilising local and session storage to store user data',
   'Work with the Postman for setting up and testing queries',
   'Flexbox and grid layouts for flexible and responsive design',
