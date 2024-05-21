@@ -6,7 +6,7 @@ function NavBar() {
 
   return (
     <header className={`header${isHeaderFixed ? ' fixed' : ''}`}>
-      <Link to="/portfolio" className="header-logo">
+      <Link to="/portfolio" className="header-logo" aria-label='home'>
         <p className="header-logo-text">lii</p>
       </Link>
 
