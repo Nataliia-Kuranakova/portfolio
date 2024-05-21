@@ -23,6 +23,7 @@ const Footer = () => {
       >
         <div className="footer-mode">
           <div
+            aria-label="change theme"
             className={`footer-mode--${theme === 'light' ? 'dark' : 'light'}`}
           />
         </div>

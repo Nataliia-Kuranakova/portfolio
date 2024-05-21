@@ -1,4 +1,3 @@
-// import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import NavBar from './NavBar';
@@ -23,7 +22,7 @@ function createComponent(state = false) {
   );
 }
 
-describe('NavBar', () => {
+describe('NavBar component', () => {
   test('renders NavBar with default (non-fixed header)', () => {
     createComponent();
 
