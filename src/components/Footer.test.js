@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import user from '@testing-library/user-event';
+import userEvent from '@testing-library/user-event';
 import { ThemeContext } from '../context/ThemeContext';
 import '@testing-library/jest-dom/extend-expect';
 import Footer from './Footer';
@@ -56,7 +56,7 @@ describe('Footer component', () => {
     expect(themeButton).toHaveClass('footer-mode--dark');
     expect(themeButton).not.toHaveClass('footer-mode--light');
 
-    user.click(themeButton);
+    await userEvent.click(themeButton);
 
     expect(setTheme).toHaveBeenCalled();
     expect(setTheme).toHaveBeenCalledWith('dark');
