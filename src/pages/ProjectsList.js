@@ -26,7 +26,7 @@ const ProjectsList = () => {
         }
         onKeyDown={(e) =>
           e.key === 'Enter' &&
-          handleClickPathTo(`/projects/${item.project_path}`)
+          handleClickPathTo(`/portfolio/projects/${item.project_path}`)
         }
         tabIndex="0"
         aria-label={`View project ${item.project}`}
