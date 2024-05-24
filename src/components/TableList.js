@@ -18,7 +18,7 @@ const TableList = ({ list }) => {
       {list.lists[0].map((_, itemIndex) => (
         <li className="project-goals-item" key={itemIndex}>
           {list.lists.map((list, listIndex) => (
-            <p className={itemBg} key={listIndex}>
+            <p className={itemBg} key={listIndex} data-testid="paragraph">
               {list[itemIndex]}
             </p>
           ))}

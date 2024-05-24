@@ -7,7 +7,11 @@ const Row = () => {
         {Array(16)
           .fill(skills)
           .map((elem, index) => {
-            return <span key={index}>{elem}</span>;
+            return (
+              <span title="skills string" key={index}>
+                {elem}
+              </span>
+            );
           })}
       </p>
     </section>
