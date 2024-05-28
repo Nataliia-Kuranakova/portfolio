@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useTheme } from '../../context/ThemeContext';
 
 const useDisableScrolling = (location) => {
-  console.log('location hook ', location);
   const { handlePageLocation } = useTheme();
 
   useEffect(() => {
@@ -12,14 +11,9 @@ const useDisableScrolling = (location) => {
       '/portfolio/about',
     ];
 
-    const scrollAutoPaths = [
-      '/portfolio/projects/Portfolio',
-      '/portfolio/projects/journey-cast',
-    ];
-
     if (scrollHiddenPaths.includes(location)) {
       handlePageLocation('scroll-hidden');
-    } else if (scrollAutoPaths.includes(location)) {
+    } else {
       handlePageLocation('scroll-auto');
     }
   }, [location, handlePageLocation]);
