@@ -9,7 +9,7 @@ import Pages from './pages/Pages';
 import '../src/styles/main.scss';
 
 function App() {
-  const { theme } = useTheme();
+  const { theme, pageLocation } = useTheme();
 
   useEffect(() => {
     if (theme === 'light') {
@@ -20,7 +20,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={` main-container `}>
+    <div className={` main-container ${pageLocation} `}>
       <div className={`liner-gradient-beneath`}></div>
       <div
         className={`liner-gradient ${theme === 'light' ? '' : 'dark-bg'}`}

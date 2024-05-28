@@ -1,11 +1,12 @@
 import { useTheme } from '../context/ThemeContext';
 import useDisableScrolling from '../components/hooks/useDisableScrolling';
+import { useLocation } from 'react-router-dom';
 import Row from '../components/Row';
 
 const Introduction = () => {
   const { theme } = useTheme();
-  const location = true;
-  useDisableScrolling(location);
+  const location = useLocation()
+  useDisableScrolling(location.pathname);
   const colorTitle = theme === 'dark' ? 'light-text-span' : 'dark-text-span';
   return (
     <>
