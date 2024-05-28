@@ -2,15 +2,17 @@ import { useEffect } from 'react';
 
 const useDisableScrolling = (location) => {
   useEffect(() => {
-    if (location) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
+    const scrollHiddenPaths = [
+      '/portfolio',
+      '/portfolio/projects',
+      '/portfolio/about',
+    ];
 
-    return () => {
-      document.body.style.overflow = 'auto';
-    };
+    if (scrollHiddenPaths.includes(location)) {
+      document.body.classList.add('scroll-hidden');
+    } else {
+      document.body.classList.remove('scroll-hidden');
+    }
   }, [location]);
 };
 

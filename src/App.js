@@ -20,7 +20,7 @@ function App() {
   }, [theme]);
 
   return (
-    <div className={` main-container `}>
+    <div className={`main-container`}>
       <div className={`liner-gradient-beneath`}></div>
       <div
         className={`liner-gradient ${theme === 'light' ? '' : 'dark-bg'}`}
