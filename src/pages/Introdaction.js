@@ -1,6 +1,7 @@
 import { useTheme } from '../context/ThemeContext';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
 import { useLocation } from 'react-router-dom';
+import useDisableScrolling from '../components/hooks/useDisableScrolling';
+
 import Row from '../components/Row';
 
 const Introduction = () => {

@@ -1,8 +1,9 @@
 import { journayCastGoals } from '../data/goals-list';
 import { journayCastlioTools } from '../data/tools';
 import { journayCastExperience } from '../data/experience';
-// import { useTheme } from '../context/ThemeContext';
-// import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import useDisableScrolling from '../components/hooks/useDisableScrolling';
+
 import {
   mockUp,
   citiesApi,
@@ -10,13 +11,10 @@ import {
   weatherIconsGithub,
 } from '../data/links';
 
-import { useLocation } from 'react-router-dom';
-
 import Chip from '../components/Chip';
 import List from '../components/List';
 import TableList from '../components/TableList';
 import ButtonLink from '../components/ButtonLinl';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 const JourneyCastProject = () => {
   const location = useLocation();
