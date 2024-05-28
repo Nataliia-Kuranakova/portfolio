@@ -10,12 +10,6 @@ export const ThemeProvider = ({ children }) => {
     () => localStorage.getItem('theme') || 'light'
   );
 
-  const [pageLocation, setPageLocation] = useState('');
-
-  const handlePageLocation = (scroll) => {
-    setPageLocation(scroll);
-  };
-
   useEffect(() => {
     const handleScroll = () => setIsHeaderFixed(window.scrollY > 10);
 
@@ -32,8 +26,6 @@ export const ThemeProvider = ({ children }) => {
     theme,
     setTheme,
     isHeaderFixed,
-    handlePageLocation,
-    pageLocation,
   };
 
   return (

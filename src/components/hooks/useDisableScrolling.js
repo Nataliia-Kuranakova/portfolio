@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-import { useTheme } from '../../context/ThemeContext';
 
 const useDisableScrolling = (location) => {
-  const { handlePageLocation } = useTheme();
-
   useEffect(() => {
     const scrollHiddenPaths = [
       '/portfolio',
@@ -12,11 +9,11 @@ const useDisableScrolling = (location) => {
     ];
 
     if (scrollHiddenPaths.includes(location)) {
-      handlePageLocation('scroll-hidden');
+      document.body.classList.add('scroll-hidden');
     } else {
-      handlePageLocation('scroll-auto');
+      document.body.classList.remove('scroll-hidden');
     }
-  }, [location, handlePageLocation]);
+  }, [location]);
 };
 
 export default useDisableScrolling;
