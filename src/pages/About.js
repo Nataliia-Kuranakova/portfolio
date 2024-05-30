@@ -1,11 +1,7 @@
 import { useTheme } from '../context/ThemeContext';
-import { useLocation } from 'react-router-dom';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 const About = () => {
   const { theme } = useTheme();
-  const location = useLocation();
-  useDisableScrolling(location.pathname);
 
   return (
     <section className="about">
