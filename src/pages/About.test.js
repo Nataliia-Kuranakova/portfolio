@@ -1,7 +1,13 @@
-import { screen, render, cleanup } from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import About from './About';
 import { ThemeContext } from '../context/ThemeContext';
+import { MemoryRouter, useLocation } from 'react-router-dom';
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLocation: jest.fn(),
+}));
 
 const MockThemeProvider = ({ children, theme = 'light' }) => {
   return (
@@ -9,20 +15,18 @@ const MockThemeProvider = ({ children, theme = 'light' }) => {
   );
 };
 
-function renderComponent(themeState = 'light') {
+function renderComponent(themeState = 'light', pathname = '/') {
+  useLocation.mockReturnValue({ pathname });
   render(
     <MockThemeProvider theme={themeState}>
-      <About />
+      <MemoryRouter>
+        <About />
+      </MemoryRouter>
     </MockThemeProvider>
   );
 }
 
 describe('About component', () => {
-  afterEach(() => {
-    cleanup();
-    document.body.style.overflow = 'auto';
-  });
-
   test('renders title with default (light) theme', () => {
     renderComponent();
 
@@ -44,22 +48,13 @@ describe('About component', () => {
   });
 
   test('disables scrolling on the page', () => {
-    expect(document.body.style.overflow).toBe('auto');
-    renderComponent();
-    expect(document.body.style.overflow).toBe('hidden');
+    renderComponent('light', '/portfolio');
+    expect(document.body).toHaveClass('scroll-hidden');
   });
 
-  test('reenables scrolling when component unmounts', () => {
-    const { unmount } = render(
-      <MockThemeProvider theme="light">
-        <About />
-      </MockThemeProvider>
-    );
+  test('does not disable scrolling on the page when location does not match', () => {
+    renderComponent('light', '/home');
 
-    expect(document.body.style.overflow).toBe('hidden');
-
-    unmount();
-
-    expect(document.body.style.overflow).toBe('auto');
+    expect(document.body).not.toHaveClass('scroll-hidden');
   });
 });
