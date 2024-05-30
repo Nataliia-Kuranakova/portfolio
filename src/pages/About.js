@@ -4,8 +4,8 @@ import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 const About = () => {
   const { theme } = useTheme();
-  const location = useLocation();
-  useDisableScrolling(location.pathname);
+  // const location = useLocation();
+  // useDisableScrolling(location.pathname);
 
   return (
     <section className="about">

@@ -1,16 +1,12 @@
 import { portfolioTools } from '../data/tools';
 import { portfolioGoals } from '../data/goals-list';
 import { portfolioExperience } from '../data/experience';
-import { useLocation } from 'react-router-dom';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 import Chip from '../components/Chip';
 import List from '../components/List';
 import TableList from '../components/TableList';
 
 const PortfolioProject = () => {
-  const location = useLocation();
-  useDisableScrolling(location.pathname);
 
   return (
     <>
