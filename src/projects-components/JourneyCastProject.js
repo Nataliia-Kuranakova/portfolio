@@ -1,8 +1,6 @@
 import { journayCastGoals } from '../data/goals-list';
 import { journayCastlioTools } from '../data/tools';
 import { journayCastExperience } from '../data/experience';
-import { useLocation } from 'react-router-dom';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 import {
   mockUp,
@@ -17,8 +15,6 @@ import TableList from '../components/TableList';
 import ButtonLink from '../components/ButtonLinl';
 
 const JourneyCastProject = () => {
-  const location = useLocation();
-  useDisableScrolling(location.pathname);
 
   return (
     <>

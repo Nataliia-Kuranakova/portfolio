@@ -4,6 +4,7 @@ const useDisableScrolling = (location) => {
   useEffect(() => {
     const scrollHiddenPaths = [
       '/portfolio',
+      '/portfolio/',
       '/portfolio/projects',
       '/portfolio/about',
     ];
