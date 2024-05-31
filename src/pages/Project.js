@@ -14,7 +14,7 @@ const Project = ({ projectContent }) => {
       <section className="project">
         <div className=" project-name">
           <div className="project-name-numeral">
-            <p className={`number ${numberColor} ${mobileNumColor}`}>
+            <p data-testid="project-number" className={`number ${numberColor} ${mobileNumColor}`}>
               {projectContent.id}
             </p>
           </div>

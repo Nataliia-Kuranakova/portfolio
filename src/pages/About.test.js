@@ -2,12 +2,7 @@ import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import About from './About';
 import { ThemeContext } from '../context/ThemeContext';
-import { MemoryRouter, useLocation } from 'react-router-dom';
-
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useLocation: jest.fn(),
-}));
+import { MemoryRouter } from 'react-router-dom';
 
 const MockThemeProvider = ({ children, theme = 'light' }) => {
   return (
@@ -15,8 +10,7 @@ const MockThemeProvider = ({ children, theme = 'light' }) => {
   );
 };
 
-function renderComponent(themeState = 'light', pathname = '/') {
-  useLocation.mockReturnValue({ pathname });
+function renderComponent(themeState = 'light') {
   render(
     <MockThemeProvider theme={themeState}>
       <MemoryRouter>
@@ -42,19 +36,8 @@ describe('About component', () => {
 
     const title = screen.getByRole('heading');
 
-    expect(title).toHaveClass(' about-title--dark');
+    expect(title).toHaveClass('about-title--dark');
     expect(title).not.toHaveClass('about-title--light');
     expect(title).toBeInTheDocument();
-  });
-
-  test('disables scrolling on the page', () => {
-    renderComponent('light', '/portfolio');
-    expect(document.body).toHaveClass('scroll-hidden');
-  });
-
-  test('does not disable scrolling on the page when location does not match', () => {
-    renderComponent('light', '/home');
-
-    expect(document.body).not.toHaveClass('scroll-hidden');
   });
 });

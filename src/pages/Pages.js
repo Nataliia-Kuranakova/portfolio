@@ -5,7 +5,7 @@ import useDisableScrolling from '../components/hooks/useDisableScrolling';
 
 import About from './About';
 import ProjectsList from './ProjectsList';
-import Introduction from './Introdaction';
+import Introduction from './Introduction';
 import Project from './Project';
 
 const Pages = () => {
