@@ -21,7 +21,7 @@ const ButtonLink = ({
     >
       {children}
       {icon && (
-        <div className={`project-button-link-icon `}>
+        <div className={`project-button-link-icon `} data-testid="link-button-icon">
           <svg>
             <use xlinkHref={`${sprite}#view-link`} />
           </svg>

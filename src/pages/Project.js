@@ -1,7 +1,7 @@
 import { useTheme } from '../context/ThemeContext';
 import { githubLink, githubPagesLink } from '../data/links';
 
-import ButtoLink from '../components/ButtonLinl';
+import ButtoLink from '../components/ButtonLink';
 
 const Project = ({ projectContent }) => {
   const { theme } = useTheme();

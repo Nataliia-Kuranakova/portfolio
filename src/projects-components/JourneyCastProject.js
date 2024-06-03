@@ -12,7 +12,7 @@ import {
 import Chip from '../components/Chip';
 import List from '../components/List';
 import TableList from '../components/TableList';
-import ButtonLink from '../components/ButtonLinl';
+import ButtonLink from '../components/ButtonLink';
 
 const JourneyCastProject = () => {
 
