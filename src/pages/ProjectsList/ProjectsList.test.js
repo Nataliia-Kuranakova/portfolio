@@ -3,7 +3,8 @@ import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import { projects } from '../../data/separate-projects';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
-import { renderWithTheme } from '../../testUtils';
+
+import { renderWithTheme } from '../../utils/testUtils';
 
 import ProjectsList from './ProjectsList';
 

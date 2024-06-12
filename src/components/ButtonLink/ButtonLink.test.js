@@ -1,22 +1,15 @@
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { renderWithTheme } from '../../utils/testUtils';
+
 import ButtonLink from './ButtonLink';
-
-// import { ThemeContext } from '../context/ThemeContext';
-import { renderWithTheme } from '../../testUtils';
-
-// const MockThemeProvider = ({ children, theme = 'light' }) => {
-//   return (
-//     <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
-//   );
-// };
 
 function renderComponent(themeState = 'light', icon = false, margin = false) {
   renderWithTheme(
     <ButtonLink
       href="https://example.com"
       buttonStyle="btn-style"
-      arialLabel="example"
+      ariaLabel="example"
       icon={icon}
       margin={margin}
     >

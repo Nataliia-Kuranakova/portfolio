@@ -1,4 +1,4 @@
-import { ThemeContext } from './context/ThemeContext';
+import { ThemeContext } from '../context/ThemeContext';
 import { render } from '@testing-library/react';
 
 export const MockThemeProvider = ({

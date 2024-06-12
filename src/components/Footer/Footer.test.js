@@ -1,9 +1,10 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
-import Footer from './Footer';
+import { renderWithTheme } from '../../utils/testUtils';
 import { githubLink, linkedinLink } from '../../data/links';
-import { renderWithTheme } from '../../testUtils';
+
+import Footer from './Footer';
 
 function renderComponent(themeState = 'light', setTheme = jest.fn()) {
   renderWithTheme(<Footer />, { theme: themeState, setTheme });

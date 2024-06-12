@@ -1,5 +1,6 @@
 import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+
 import Project from './Project';
 
 import { ThemeContext } from '../../context/ThemeContext';
@@ -12,17 +13,17 @@ const MockThemeProvider = ({ children, theme = 'light' }) => {
 };
 
 function renderComponent(themeState = 'light') {
-  const projectContent =  {
+  const projectContent = {
     id: '01',
     project: 'Portfolio',
     project_path: 'Portfolio',
-    // descr: <PortfolioProject />,
-  }
+    descr: <></>,
+  };
 
   render(
     <MockThemeProvider theme={themeState}>
       <MemoryRouter>
-        <Project projectContent={projectContent}/>
+        <Project projectContent={projectContent} />
       </MemoryRouter>
     </MockThemeProvider>
   );
@@ -33,8 +34,8 @@ describe('Project component', () => {
     renderComponent();
 
     const projectNumber = screen.getByTestId('project-number');
-    expect(projectNumber).toHaveClass('number--light number-dark')
-    expect(projectNumber).not.toHaveClass('number--dark number-light')
+    expect(projectNumber).toHaveClass('number--light number-dark');
+    expect(projectNumber).not.toHaveClass('number--dark number-light');
     expect(projectNumber).toBeInTheDocument();
   });
 
@@ -42,8 +43,8 @@ describe('Project component', () => {
     renderComponent('dark');
 
     const projectNumber = screen.getByTestId('project-number');
-    expect(projectNumber).toHaveClass('number--dark number-light')
-    expect(projectNumber).not.toHaveClass('number--light number-dark')
+    expect(projectNumber).toHaveClass('number--dark number-light');
+    expect(projectNumber).not.toHaveClass('number--light number-dark');
     expect(projectNumber).toBeInTheDocument();
   });
 });

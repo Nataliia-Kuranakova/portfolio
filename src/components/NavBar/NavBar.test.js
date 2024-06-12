@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import NavBar from './NavBar';
 import { MemoryRouter } from 'react-router-dom';
+import { renderWithTheme } from '../../utils/testUtils';
 
-import { renderWithTheme } from '../../testUtils';
+import NavBar from './NavBar';
 
 function renderComponent(scrollState = false) {
   renderWithTheme(

@@ -1,7 +1,8 @@
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { MemoryRouter } from 'react-router-dom';
-import { renderWithTheme } from '../../testUtils';
+import { renderWithTheme } from '../../utils/testUtils';
+
 import Introduction from './Introduction';
 
 function renderComponent(themeState = 'light') {
