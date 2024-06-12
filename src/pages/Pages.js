@@ -1,12 +1,12 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { projects } from '../data/separate-projects';
-import useDisableScrolling from '../components/hooks/useDisableScrolling';
+import useDisableScrolling from '../hooks/useDisableScrolling';
 
-import About from './About';
-import ProjectsList from './ProjectsList';
-import Introduction from './Introdaction';
-import Project from './Project';
+import About from './About/About';
+import ProjectsList from './ProjectsList/ProjectsList';
+import Introduction from './Introduction/Introduction';
+import Project from './Project/Project';
 
 const Pages = () => {
   const { theme } = useTheme();

@@ -1,7 +1,7 @@
-import { useTheme } from '../context/ThemeContext';
-import { githubLink, githubPagesLink } from '../data/links';
+import { useTheme } from '../../context/ThemeContext';
+import { githubLink, githubPagesLink } from '../../data/links';
 
-import ButtoLink from '../components/ButtonLinl';
+import ButtonLink from '../../components/ButtonLink/ButtonLink';
 
 const Project = ({ projectContent }) => {
   const { theme } = useTheme();
@@ -14,7 +14,10 @@ const Project = ({ projectContent }) => {
       <section className="project">
         <div className=" project-name">
           <div className="project-name-numeral">
-            <p className={`number ${numberColor} ${mobileNumColor}`}>
+            <p
+              data-testid="project-number"
+              className={`number ${numberColor} ${mobileNumColor}`}
+            >
               {projectContent.id}
             </p>
           </div>
@@ -29,22 +32,22 @@ const Project = ({ projectContent }) => {
 
           <div className="project-button-container">
             {projectContent.project_path !== 'Portfolio' && (
-              <ButtoLink
+              <ButtonLink
                 href={`${githubPagesLink}${projectContent.project_path}/`}
                 ariaLabel={`View demo of ${projectContent.project}`}
                 buttonStyle="project-button-link"
               >
                 Demo
-              </ButtoLink>
+              </ButtonLink>
             )}
 
-            <ButtoLink
+            <ButtonLink
               href={`${githubLink}/${projectContent.project_path}`}
               ariaLabel={`View code of ${projectContent.project}`}
               buttonStyle="project-button-link"
             >
               Code
-            </ButtoLink>
+            </ButtonLink>
           </div>
         </div>
       </section>

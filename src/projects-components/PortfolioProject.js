@@ -4,7 +4,7 @@ import { portfolioExperience } from '../data/experience';
 
 import Chip from '../components/Chip';
 import List from '../components/List';
-import TableList from '../components/TableList';
+import TableList from '../components/TableList/TableList';
 
 const PortfolioProject = () => {
 

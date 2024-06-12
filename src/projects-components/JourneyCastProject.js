@@ -11,8 +11,8 @@ import {
 
 import Chip from '../components/Chip';
 import List from '../components/List';
-import TableList from '../components/TableList';
-import ButtonLink from '../components/ButtonLinl';
+import TableList from '../components/TableList/TableList';
+import ButtonLink from '../components/ButtonLink/ButtonLink';
 
 const JourneyCastProject = () => {
 
@@ -51,7 +51,7 @@ const JourneyCastProject = () => {
       <p>
         My passion for travel motivated me to develop a compact application for
         tracking the weather in a city during a whole trip. I wanted to create a
-        well-organised weather data system that could provide accurate forecasts
+        well-organised weather app that could provide accurate forecasts
         for a given period of time, allowing me to pack my suitcase accordingly
         for any trip.
       </p>

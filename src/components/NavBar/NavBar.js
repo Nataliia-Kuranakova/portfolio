@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
 function NavBar() {
   const { isHeaderFixed } = useTheme();
 
   return (
     <header className={`header${isHeaderFixed ? ' fixed' : ''}`}>
-      <Link to="/portfolio" className="header-logo">
+      <Link to="/portfolio" className="header-logo" aria-label="home">
         <p className="header-logo-text">lii</p>
       </Link>
 
