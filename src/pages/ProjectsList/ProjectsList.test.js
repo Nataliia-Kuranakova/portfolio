@@ -1,29 +1,23 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-import ProjectsList from './ProjectsList';
-import { projects } from '../data/separate-projects';
-import { ThemeContext } from '../context/ThemeContext';
+import { projects } from '../../data/separate-projects';
 import { MemoryRouter, useNavigate } from 'react-router-dom';
+import { renderWithTheme } from '../../testUtils';
+
+import ProjectsList from './ProjectsList';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn(),
 }));
 
-const MockThemeProvider = ({ children, theme = 'light' }) => {
-  return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
-  );
-};
-
 function renderComponent(themeState = 'light') {
-  render(
+  renderWithTheme(
     <MemoryRouter>
-      <MockThemeProvider theme={themeState}>
-        <ProjectsList />
-      </MockThemeProvider>
-    </MemoryRouter>
+      <ProjectsList />
+    </MemoryRouter>,
+    { theme: themeState }
   );
 }
 
@@ -58,9 +52,7 @@ describe('ProjectsList component', () => {
       await userEvent.click(projectItem);
 
       expect(navigate).toHaveBeenCalled();
-      expect(navigate).toHaveBeenCalledWith(
-        `${rootPath}${item.project_path}`
-      );
+      expect(navigate).toHaveBeenCalledWith(`${rootPath}${item.project_path}`);
     }
   });
 

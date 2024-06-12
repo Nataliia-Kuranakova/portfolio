@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Project from './Project';
 
-import { ThemeContext } from '../context/ThemeContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import { MemoryRouter } from 'react-router-dom';
 
 const MockThemeProvider = ({ children, theme = 'light' }) => {

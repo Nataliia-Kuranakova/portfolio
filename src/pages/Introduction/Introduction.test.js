@@ -1,23 +1,15 @@
-import { screen, render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { MemoryRouter } from 'react-router-dom';
+import { renderWithTheme } from '../../testUtils';
 import Introduction from './Introduction';
 
-import { ThemeContext } from '../context/ThemeContext';
-import { MemoryRouter } from 'react-router-dom';
-
-const MockThemeProvider = ({ children, theme = 'light' }) => {
-  return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
-  );
-};
-
 function renderComponent(themeState = 'light') {
-  render(
-    <MockThemeProvider theme={themeState}>
-      <MemoryRouter>
-        <Introduction />
-      </MemoryRouter>
-    </MockThemeProvider>
+  renderWithTheme(
+    <MemoryRouter>
+      <Introduction />
+    </MemoryRouter>,
+    { theme: themeState }
   );
 }
 

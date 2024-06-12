@@ -1,30 +1,22 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import NavBar from './NavBar';
 import { MemoryRouter } from 'react-router-dom';
-import { ThemeContext } from '../context/ThemeContext';
 
-const MockThemeProvider = ({ children, isHeaderFixed = false }) => {
-  return (
-    <ThemeContext.Provider value={{ isHeaderFixed }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
+import { renderWithTheme } from '../../testUtils';
 
-function createComponent(state = false) {
-  render(
+function renderComponent(scrollState = false) {
+  renderWithTheme(
     <MemoryRouter>
-      <MockThemeProvider isHeaderFixed={state}>
-        <NavBar />
-      </MockThemeProvider>
-    </MemoryRouter>
+      <NavBar />
+    </MemoryRouter>,
+    { isHeaderFixed: scrollState }
   );
 }
 
 describe('NavBar component', () => {
   test('renders NavBar with default (non-fixed header)', () => {
-    createComponent();
+    renderComponent();
 
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('header');
@@ -53,7 +45,7 @@ describe('NavBar component', () => {
   });
 
   test('renders NavBar with fixed header', () => {
-    createComponent(true);
+    renderComponent(true);
 
     const header = screen.getByRole('banner');
     expect(header).toHaveClass('header fixed');

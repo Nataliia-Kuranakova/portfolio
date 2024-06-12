@@ -1,28 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ThemeContext } from '../context/ThemeContext';
 import '@testing-library/jest-dom/extend-expect';
 import Footer from './Footer';
-import { githubLink, linkedinLink } from '../data/links';
+import { githubLink, linkedinLink } from '../../data/links';
+import { renderWithTheme } from '../../testUtils';
 
-const MockThemeProvider = ({
-  children,
-  theme = 'light',
-  setTheme = jest.fn(),
-}) => {
-  return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-};
-
-function renderComponent(themeState = 'light', setTheme) {
-  render(
-    <MockThemeProvider theme={themeState} setTheme={setTheme}>
-      <Footer />
-    </MockThemeProvider>
-  );
+function renderComponent(themeState = 'light', setTheme = jest.fn()) {
+  renderWithTheme(<Footer />, { theme: themeState, setTheme });
 }
 
 describe('Footer component', () => {

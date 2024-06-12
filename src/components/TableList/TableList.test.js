@@ -1,21 +1,12 @@
-import { screen, render, within } from '@testing-library/react';
+import { screen, within } from '@testing-library/react';
 import TableList from './TableList';
 import '@testing-library/jest-dom/extend-expect';
-import { ThemeContext } from '../context/ThemeContext';
-import { portfolioGoals, journayCastGoals } from '../data/goals-list';
+import { portfolioGoals, journayCastGoals } from '../../data/goals-list';
 
-const MockThemeProvider = ({ children, theme = 'light' }) => {
-  return (
-    <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>
-  );
-};
+import { renderWithTheme } from '../../testUtils';
 
 function renderComponent(themeState = 'light', list) {
-  render(
-    <MockThemeProvider theme={themeState}>
-      <TableList list={list} />
-    </MockThemeProvider>
-  );
+  renderWithTheme(<TableList list={list} />, { theme: themeState });
 }
 
 describe('TableList component', () => {
@@ -37,7 +28,7 @@ describe('TableList component', () => {
       expect(paragraphs).toHaveLength(portfolioGoals.titles.length);
     });
   });
-  
+
   test('renders journayCastGoals goals correctly', () => {
     renderComponent('light', journayCastGoals);
 

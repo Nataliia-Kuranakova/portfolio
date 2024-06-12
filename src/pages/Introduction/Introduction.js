@@ -1,6 +1,6 @@
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 
-import Row from '../components/Row';
+import Row from '../../components/Row/Row';
 
 const Introduction = () => {
   const { theme } = useTheme();

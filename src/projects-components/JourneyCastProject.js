@@ -11,8 +11,8 @@ import {
 
 import Chip from '../components/Chip';
 import List from '../components/List';
-import TableList from '../components/TableList';
-import ButtonLink from '../components/ButtonLink';
+import TableList from '../components/TableList/TableList';
+import ButtonLink from '../components/ButtonLink/ButtonLink';
 
 const JourneyCastProject = () => {
 

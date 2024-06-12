@@ -1,5 +1,7 @@
-import { useTheme } from '../context/ThemeContext';
-import sprite from '../sprites/sprite.svg';
+import { useTheme } from '../../context/ThemeContext';
+import sprite from '../../sprites/sprite.svg';
+
+
 
 const ButtonLink = ({
   icon,

@@ -1,6 +1,6 @@
-import { useTheme } from '../context/ThemeContext';
-import sprite from '../sprites/sprite.svg';
-import { githubLink, linkedinLink } from '../data/links';
+import { useTheme } from '../../context/ThemeContext';
+import sprite from '../../sprites/sprite.svg';
+import { githubLink, linkedinLink } from '../../data/links';
 
 const Footer = () => {
   const { theme, setTheme } = useTheme();

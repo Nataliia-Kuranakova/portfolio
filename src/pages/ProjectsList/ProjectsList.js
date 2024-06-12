@@ -1,7 +1,7 @@
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 
-import { projects } from '../data/separate-projects';
+import { projects } from '../../data/separate-projects';
 
 const ProjectsList = () => {
   const { theme } = useTheme();

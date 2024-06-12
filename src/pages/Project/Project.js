@@ -1,7 +1,7 @@
-import { useTheme } from '../context/ThemeContext';
-import { githubLink, githubPagesLink } from '../data/links';
+import { useTheme } from '../../context/ThemeContext';
+import { githubLink, githubPagesLink } from '../../data/links';
 
-import ButtoLink from '../components/ButtonLink';
+import ButtonLink from '../../components/ButtonLink/ButtonLink';
 
 const Project = ({ projectContent }) => {
   const { theme } = useTheme();
@@ -29,22 +29,22 @@ const Project = ({ projectContent }) => {
 
           <div className="project-button-container">
             {projectContent.project_path !== 'Portfolio' && (
-              <ButtoLink
+              <ButtonLink
                 href={`${githubPagesLink}${projectContent.project_path}/`}
                 ariaLabel={`View demo of ${projectContent.project}`}
                 buttonStyle="project-button-link"
               >
                 Demo
-              </ButtoLink>
+              </ButtonLink>
             )}
 
-            <ButtoLink
+            <ButtonLink
               href={`${githubLink}/${projectContent.project_path}`}
               ariaLabel={`View code of ${projectContent.project}`}
               buttonStyle="project-button-link"
             >
               Code
-            </ButtoLink>
+            </ButtonLink>
           </div>
         </div>
       </section>
